@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
+import Feeling from '../Feeling/Feeling';
+import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
+// import axios from 'axios';
 import './App.css';
 
 class App extends Component {
@@ -11,6 +16,12 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <br/>
+
+        <Feeling/>
+        <Understanding/>
+        <Support/>
+        <Comments/>
+
       </div>
     );
   }
