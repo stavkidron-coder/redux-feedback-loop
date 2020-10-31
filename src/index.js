@@ -10,8 +10,17 @@ import { Provider } from 'react-redux';
 // feeling reducer
 const feeling = (state=0, action) => {
     if(action.type === 'FEELING'){
-        console.log('Add:', action.payload);
+        console.log('Feeling:', action.payload);
         state = action.payload;
+        return state;
+    }
+    return state;
+}
+
+const understandingReducer = (state=0, action) => {
+    if(action.type === 'UNDERSTANDING'){
+        console.log('Understanding:', action.payload);
+        state = action.payload
         return state;
     }
     return state;
@@ -19,7 +28,8 @@ const feeling = (state=0, action) => {
 
 const storeInstance = createStore(
     combineReducers({
-        feeling
+        feeling,
+        understandingReducer
     })
 )
 

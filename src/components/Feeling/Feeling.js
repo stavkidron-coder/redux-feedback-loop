@@ -9,8 +9,7 @@ class Feeling extends Component {
     }
 
     handleInput = (event) => {
-        // console.log(event.target.value); // Used for testing
-        console.log(this.state.feeling);
+        // console.log(this.state.feeling); //console log used for testing
         this.setState({
             feeling: Number(event.target.value)
         });
