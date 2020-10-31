@@ -16,7 +16,7 @@ class Understanding extends Component {
 
     nextPage = () => {
         // send answer to reduxState
-        this.props.dispatch({type: 'UNDERSTANDING', payload: this.state.understanding});
+        this.props.dispatch({type: 'REVIEW', payload: this.state.understanding});
 
         //Navigate to next page
         this.props.history.push('/support');

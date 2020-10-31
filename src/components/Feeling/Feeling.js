@@ -17,7 +17,7 @@ class Feeling extends Component {
 
     nextPage = () => {
         // send answer to reduxState
-        this.props.dispatch({type: 'FEELING', payload: this.state.feeling});
+        this.props.dispatch({type: 'REVIEW', payload: this.state.feeling});
 
         //Navigate to next page
         this.props.history.push('/understanding');
