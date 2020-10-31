@@ -3,34 +3,59 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
-import { createStore, combineReducers } from'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 
 
-// feeling reducer
-const feeling = (state=0, action) => {
-    if(action.type === 'FEELING'){
-        console.log('Feeling:', action.payload);
-        state = action.payload;
-        return state;
+
+// // feeling reducer
+// const feelingReducer = (state=0, action) => {
+//     if(action.type === 'FEELING'){
+//         console.log('Feeling:', action.payload);
+//         state = action.payload;
+//         return state;
+//     }
+//     return state;
+// }
+
+// // understanding reducer
+// const understandingReducer = (state=0, action) => {
+//     if(action.type === 'UNDERSTANDING'){
+//         console.log('Understanding:', action.payload);
+//         state = action.payload
+//         return state;
+//     }
+//     return state;
+// }
+
+// // support reducer
+// const supportReducer = (state=0, action) => {
+//     if(action.type === 'SUPPORT'){
+//         console.log('Support:', action.payload);
+//         state = action.payload
+//         return state;
+//     }
+//     return state;
+// }
+
+const reviewReducer = (state=[], action) => {
+    switch(action.type){
+        case 'REVIEW':
+            console.log([...state, action.payload]);
+            return [...state, action.payload];
+        default:
+            return state;
     }
-    return state;
+    
 }
 
-const understandingReducer = (state=0, action) => {
-    if(action.type === 'UNDERSTANDING'){
-        console.log('Understanding:', action.payload);
-        state = action.payload
-        return state;
-    }
-    return state;
-}
 
 const storeInstance = createStore(
     combineReducers({
-        feeling,
-        understandingReducer
-    })
+        reviewReducer
+    }),
+    applyMiddleware(logger)
 )
 
 
