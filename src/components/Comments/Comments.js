@@ -19,7 +19,7 @@ class Comments extends Component {
         this.props.dispatch({type: 'REVIEW', payload: this.state.comments});
 
         //Navigate to next page
-        this.props.history.push('/support');
+        this.props.history.push('/review');
     }
 
     render(){
