@@ -16,11 +16,18 @@ class Feeling extends Component {
     }
 
     nextPage = () => {
+        if(this.state.feeling > 0 && this.state.feeling < 7){
         // send answer to reduxState
         this.props.dispatch({type: 'REVIEW', payload: this.state.feeling});
 
         //Navigate to next page
         this.props.history.push('/understanding');
+        }
+        else {
+            alert("Fill in all fields");
+            return
+        }
+
     }
 
     render(){

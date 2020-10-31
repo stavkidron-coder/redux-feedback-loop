@@ -15,11 +15,22 @@ class Understanding extends Component {
     }
 
     nextPage = () => {
-        // send answer to reduxState
-        this.props.dispatch({type: 'REVIEW', payload: this.state.understanding});
+        if(this.state.understanding > 0 && this.state.understanding < 7){
+            // send answer to reduxState
+            this.props.dispatch({type: 'REVIEW', payload: this.state.understanding});
 
-        //Navigate to next page
-        this.props.history.push('/support');
+            //Navigate to next page
+            this.props.history.push('/support');
+            }
+            else {
+                alert("Fill in all fields");
+                return
+            }
+
+
+
+
+
     }
 
     render(){
