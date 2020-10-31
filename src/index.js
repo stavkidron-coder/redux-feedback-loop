@@ -7,15 +7,19 @@ import { createStore, combineReducers } from'redux';
 import { Provider } from 'react-redux';
 
 
-// just a test to get up and running. Replace or delete when setting up for actual project
-const testReducer = (state=0) => {
-    console.log('Hello from testReducer');
+// feeling reducer
+const feeling = (state=0, action) => {
+    if(action.type === 'FEELING'){
+        console.log('Add:', action.payload);
+        state = action.payload;
+        return state;
+    }
     return state;
 }
 
 const storeInstance = createStore(
     combineReducers({
-        testReducer
+        feeling
     })
 )
 
