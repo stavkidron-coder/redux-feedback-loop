@@ -9,6 +9,12 @@ import Comments from '../Comments/Comments';
 import './App.css';
 
 class App extends Component {
+
+  componentDidMount = () => {
+    console.log('Mounted');
+    
+  }
+
   render() {
     return (
       <Router>
