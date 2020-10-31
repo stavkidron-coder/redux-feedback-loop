@@ -15,11 +15,17 @@ class Support extends Component {
     }
 
     nextPage = () => {
-        // send answer to reduxState
-        this.props.dispatch({type: 'REVIEW', payload: this.state.support});
+        if(this.state.support > 0 && this.state.support < 7){
+            // send answer to reduxState
+            this.props.dispatch({type: 'REVIEW', payload: this.state.support});
 
-        //Navigate to next page
-        this.props.history.push('/comments');
+            //Navigate to next page
+            this.props.history.push('/comments');
+            }
+            else {
+                alert("Fill in all fields");
+                return
+            }
     }
 
     render(){
