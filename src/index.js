@@ -7,43 +7,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-
-
-// // feeling reducer
-// const feelingReducer = (state=0, action) => {
-//     if(action.type === 'FEELING'){
-//         console.log('Feeling:', action.payload);
-//         state = action.payload;
-//         return state;
-//     }
-//     return state;
-// }
-
-// // understanding reducer
-// const understandingReducer = (state=0, action) => {
-//     if(action.type === 'UNDERSTANDING'){
-//         console.log('Understanding:', action.payload);
-//         state = action.payload
-//         return state;
-//     }
-//     return state;
-// }
-
-// // support reducer
-// const supportReducer = (state=0, action) => {
-//     if(action.type === 'SUPPORT'){
-//         console.log('Support:', action.payload);
-//         state = action.payload
-//         return state;
-//     }
-//     return state;
-// }
-
 const reviewReducer = (state=[], action) => {
     switch(action.type){
         case 'REVIEW':
             console.log([...state, action.payload]);
             return [...state, action.payload];
+        case 'CLEAR':
+            // console.log(state);
+            return [];
         default:
             return state;
     }

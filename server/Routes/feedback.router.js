@@ -19,6 +19,20 @@ router.post('/', (req, res) => {
     });
 });
 
+//GET feedback from DB
+router.get('/', (req, res) => {
+    const queryText = `SELECT * FROM feedback ORDER BY date;`;
+    pool.query(queryText)
+        .then((result) => {
+            console.log(`Got stuff back from the database`, result.rows);
+            res.send(result.rows);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlText}`, error);
+            res.sendStatus(500); // Good server always responds
+        })
+})
+
 
 
 

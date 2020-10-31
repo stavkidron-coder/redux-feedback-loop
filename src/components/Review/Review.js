@@ -22,15 +22,25 @@ class Review extends Component {
           }).catch((error) => {
             console.log(error);   
           });
+
+        //alert to say submitted successfully
+        alert("Review successfully submitted!")
         
         //Navigate to next page
-        // this.props.history.push('/');
+        this.props.history.push('/endpage');
     }
 
     render(){
         return(
             <div>
                 <h2>Review</h2>
+
+                <ul>
+                    <li>Feeling: {this.state.feeling}</li>
+                    <li>Understanding: {this.state.understanding}</li>
+                    <li>Support: {this.state.support}</li>
+                    <li>Comments: {this.state.comments}</li>
+                </ul>
 
                 <button onClick={this.nextPage}>Next</button>
             </div>

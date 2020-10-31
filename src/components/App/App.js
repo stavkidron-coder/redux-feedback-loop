@@ -6,6 +6,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import EndPage from'../EndPage/EndPage';
 // import axios from 'axios';
 import './App.css';
 
@@ -36,6 +37,7 @@ class App extends Component {
           <Route exact path="/support" component={Support}/>
           <Route exact path="/comments" component={Comments}/>
           <Route exact path="/review" component={Review}/>
+          <Route exact path="/endpage" component={EndPage}/>
 
         </div>
       </Router>
