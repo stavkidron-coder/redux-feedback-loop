@@ -30,19 +30,51 @@ class Review extends Component {
         this.props.history.push('/endpage');
     }
 
+    feelingPage = () => {
+        this.props.history.push('/');
+    }
+
+    understandingPage = () => {
+        this.props.history.push('/understanding');
+    }
+
+    supportPage = () => {
+        this.props.history.push('/support');
+    }
+
+    commentsPage = () => {
+        this.props.history.push('/comments');
+    }
+
     render(){
         return(
             <div>
                 <h2>Review</h2>
 
-                <ul>
-                    <li>Feeling: {this.state.feeling}</li>
-                    <li>Understanding: {this.state.understanding}</li>
-                    <li>Support: {this.state.support}</li>
-                    <li>Comments: {this.state.comments}</li>
+                <ul className="reviewList">
+                    <li>Feeling: {this.state.feeling}
+                        <button onClick={this.feelingPage}>
+                            Edit
+                        </button>
+                    </li>
+                    <li>Understanding: {this.state.understanding}
+                        <button onClick={this.understandingPage}>
+                            Edit
+                        </button>
+                    </li>
+                    <li>Support: {this.state.support}
+                        <button onClick={this.supportPage}>
+                            Edit
+                        </button>
+                    </li>
+                    <li>Comments: {this.state.comments}
+                        <button onClick={this.commentsPage}>
+                            Edit
+                        </button>
+                    </li>
                 </ul>
 
-                <button onClick={this.nextPage}>Next</button>
+                <button onClick={this.nextPage}>Submit Review</button>
             </div>
         )
     }
